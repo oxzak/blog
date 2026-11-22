@@ -81,7 +81,7 @@ function home() {
 }
 
 function all() {
-  document.title = "Writing — " + CONFIG.name;
+  document.title = CONFIG.name;
   nav.innerHTML = NAV;
   app.innerHTML = `<h2 class="sec">~/writing</h2>${table(posts)}`;
 }
@@ -89,7 +89,7 @@ function all() {
 function post(slug) {
   const p = posts.find(x => x.slug === slug);
   if (!p) return home();
-  document.title = p.title + " — " + CONFIG.name;
+  document.title = CONFIG.name;
   const fromAll = lastList === "all";
   nav.innerHTML = `<a href="#${lastList}">← ${fromAll ? "Writing" : "home"}</a><a href="#${fromAll ? "" : "all"}">${fromAll ? "home" : "Writing"}</a>`;
   const kicker = ["WRITING", ...p.tags].map(t => esc(t.toUpperCase())).join(" · ");
