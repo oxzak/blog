@@ -1,0 +1,32 @@
+name: SonarQube
+
+on:
+  schedule:
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+
+jobs:
+  sonarcloud:
+    name: SonarQube Scan
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Push Empty Commit
+        run: |
+          git config --global user.name ${{secrets.FULLNAME}}
+          git config --global user.email ${{secrets.EMAIL}}
+          git commit --allow-empty -m "SonarQube Scan Completed!"
+          git push
