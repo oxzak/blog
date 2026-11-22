@@ -1,0 +1,28 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Obsidian settings (if you open posts/ as a vault)
+.obsidian/
+posts/.obsidian/
+.trash/
+
+# Env / secrets
+.env
+.env.*
+
+# Logs and temp files
+*.log
+*.tmp
