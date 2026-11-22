@@ -1,0 +1,68 @@
+:root{--bg:#010f07;--fg:#a9d9b5;--head:#c6efd0;--dim:#3f8a58;--accent:#2dff7a;--line:#0f2c1a;--chip:#06180d;--code:#04150a;--dot:#0b2a17}
+:root[data-theme="light"]{--bg:#f3fbf5;--fg:#25402f;--head:#0f2a1a;--dim:#5f8d70;--accent:#0b8f3d;--line:#cfe6d6;--chip:#e5f4ea;--code:#e9f5ed;--dot:#dcecdf}
+*{box-sizing:border-box}
+html{background-color:var(--bg);background-image:radial-gradient(var(--dot) 1px,transparent 1px);background-size:22px 22px;background-attachment:fixed;min-height:100%}
+body{margin:0;min-height:100vh;color:var(--fg);font:19px/1.65 "Newsreader",Georgia,serif}
+.mono,.theme,nav,h1,.kicker,.sec,th,.chip,.more,.back,.pkicker,.pdate,.ptitle,.sum,.tag{font-family:"Share Tech Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+main{max-width:1000px;margin:0 auto;padding:56px 24px 100px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+/* theme pills */
+.theme{display:flex;justify-content:flex-end;align-items:center;gap:8px;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:44px}
+.theme span{margin-right:6px}
+.theme a{color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:3px 14px}
+.theme a:hover{text-decoration:none;border-color:var(--dim)}
+[data-theme="dark"] a[data-t="dark"],[data-theme="light"] a[data-t="light"]{color:var(--accent);border-color:var(--accent);box-shadow:0 0 8px color-mix(in srgb,var(--accent) 35%,transparent)}
+/* nav */
+nav{display:flex;justify-content:space-between;color:var(--dim);font-size:15px;letter-spacing:.12em;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:56px}
+nav a{color:var(--dim)}nav a:hover{color:var(--accent);text-decoration:none}
+.kicker{font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--dim);margin-bottom:28px}
+h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.25;font-weight:400;color:var(--head);letter-spacing:.04em;margin:0 0 40px;max-width:760px}
+/* info table */
+table.info{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:color-mix(in srgb,var(--bg) 70%,transparent)}
+.info th,.info td{padding:15px 18px;border-top:1px solid var(--line);text-align:left;font-weight:400}
+.info tr:first-child th,.info tr:first-child td{border-top:0}
+.info th{width:140px;border-right:1px solid var(--line);color:var(--accent);font-size:13px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
+.info td{color:var(--fg)}
+.chip{display:inline-block;font-size:13px;letter-spacing:.08em;color:var(--dim);background:var(--chip);border:1px solid var(--line);border-radius:5px;padding:0 9px;margin-left:4px;line-height:1.7}
+/* section heading */
+.sec{display:flex;align-items:center;gap:18px;font-size:14px;letter-spacing:.12em;color:var(--dim);font-weight:400;margin:70px 0 28px}
+.sec::before,.sec::after{content:"";flex:1;border-top:1px solid var(--line)}
+.more{display:block;margin-top:22px;font-size:15px}
+/* posts table */
+table.posts{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:color-mix(in srgb,var(--bg) 70%,transparent)}
+.posts td{padding:16px 20px;border-top:1px solid var(--line);vertical-align:middle}
+.posts tr:first-child td{border-top:0}
+.posts .pd{width:130px;border-right:1px solid var(--line);color:var(--accent);font-family:"Share Tech Mono",monospace;font-size:14px;letter-spacing:.1em;white-space:nowrap}
+.posts .pt a{font-family:"Share Tech Mono",monospace;font-size:19px;letter-spacing:.05em;color:var(--head);margin-right:10px}
+.posts .pt a:hover{color:var(--accent);text-decoration:none}
+.posts .s{color:var(--dim);font-size:16px}
+@media(max-width:640px){.posts .pd{width:auto;white-space:normal;padding:16px 12px}.posts .pt{padding:16px 12px}}
+/* social icons */
+.socials{display:flex;flex-wrap:wrap;gap:14px;margin-top:-8px}
+.ico{display:flex;align-items:center;justify-content:center;width:52px;height:52px;border:1px solid var(--line);border-radius:12px;color:var(--dim);background:var(--chip);transition:.15s}
+.ico svg{width:24px;height:24px}
+.ico:hover{color:var(--accent);border-color:var(--accent);box-shadow:0 0 12px color-mix(in srgb,var(--accent) 35%,transparent);text-decoration:none;transform:translateY(-2px)}
+.back{font-family:"Share Tech Mono",monospace;font-size:15px;letter-spacing:.08em}
+/* post page */
+.pkicker{font-size:13px;letter-spacing:.25em;color:var(--dim);margin-bottom:26px}
+.ptitle{font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.2;font-weight:400;color:var(--head);letter-spacing:.05em;margin:0 0 22px}
+.ptitle .hl{color:var(--accent)}
+.ptitle{margin-bottom:18px}
+.sum{display:block;width:fit-content;max-width:min(860px,100%);padding:14px 18px;border:1px solid var(--line);border-radius:8px;background:var(--code);color:var(--dim);font-size:17px;line-height:1.75;letter-spacing:.06em}
+.pdate{font-size:13px;letter-spacing:.1em;color:var(--dim);margin:14px 0 44px}
+.pdate a{color:var(--dim);text-decoration:underline}.pdate a:hover{color:var(--accent)}
+.prose>:first-child{margin-top:0}
+/* posts */
+article{max-width:100%}
+.meta{color:var(--dim);font-size:14px;letter-spacing:.06em;margin-bottom:36px}
+.tag{margin-right:8px}
+article h2,article h3{font-family:"Share Tech Mono",monospace;font-weight:400;color:var(--head);margin-top:2em;line-height:1.3;letter-spacing:.03em}
+article img{max-width:100%;border-radius:6px;border:1px solid var(--line)}
+article pre{background:var(--code);padding:16px;overflow-x:auto;border:1px solid var(--line);border-radius:8px;font:14px/1.55 "Share Tech Mono",ui-monospace,Menlo,monospace}
+article code{background:var(--code);padding:1px 6px;border-radius:4px;font-family:"Share Tech Mono",ui-monospace,monospace;font-size:.88em}
+article pre code{background:none;padding:0}
+article blockquote{margin:1.2em 0;padding-left:16px;border-left:2px solid var(--accent);color:var(--dim);font-style:italic}
+article table{border-collapse:collapse;display:block;overflow-x:auto}
+article td,article th{border:1px solid var(--line);padding:6px 10px}
+hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+@media(max-width:640px){.info th{width:auto;display:block;border-right:0;padding-bottom:0}.info td{display:block;border-top:0;padding-top:4px}.info tr{display:block;border-top:1px solid var(--line)}.info tr:first-child{border-top:0}}
