@@ -99,7 +99,7 @@ function post(slug) {
   const i = p.highlight ? title.indexOf(hl) : title.lastIndexOf(hl);
   if (i >= 0) title = title.slice(0, i) + `<span class="hl">${hl}</span>` + title.slice(i + hl.length);
   const also = [["Medium", p.medium], ["dev.to", p.devto]].filter(x => x[1]).map(([n, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${n}</a>`).join(" · ");
-  const body = p.body.replace(/^#\s+.*\n+/, ""); // drop duplicate H1
+  const body = p.body.replace(/^\s*#[ \t]+[^\n]*\n+/, "");
   app.innerHTML = `<article>
     <div class="pkicker">/* ${kicker} */</div>
     <h1 class="ptitle">${title}</h1>
