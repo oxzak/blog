@@ -1,0 +1,34 @@
+#The name of the release
+name: Release v1.0
+#Declaring the branches and tags
+on:
+  push:
+    branches:
+      - "main"
+#Declaring all jobs and flows
+jobs:
+  release:
+    name: Release v1.0
+    if: "github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, '[sonar]') && !contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      #Checkout Code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      #Create New Release
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v1.0
+          release_name: PBW v1.0
+          body: |
+            Changes in this Release:
+              - [New] First release version v1.0
+          draft: false
+          prerelease: false
