@@ -51,14 +51,14 @@ function parse(raw) {
 
 // Obsidian syntax: ![[img.png]] -> image, [[Note]] -> plain text
 const obsidian = md => md.split(/(```[\s\S]*?```|`[^`\n]*`)/g).map((part, i) => i % 2 ? part : part // leave code untouched
-  .replace(/!\[\[([^\]|]+)(?:\|[^\]]*)?\]\]/g, (_, f) => `![${f}](posts/images/${encodeURI(f.trim())})`)
+  .replace(/!\[\[([^\]|]+)(?:\|[^\]]*)?\]\]/g, (_, f) => `![${f}](../posts/images/${encodeURI(f.trim())})`)
   .replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_, a, b) => b || a)).join("");
 
 async function load() {
-  const files = await (await fetch("posts/posts.json")).json();
+  const files = await (await fetch("../posts/posts.json")).json();
   posts = (await Promise.all(files.map(async f => {
     try {
-      const r = await fetch("posts/" + encodeURIComponent(f)); if (!r.ok) return null;
+      const r = await fetch("../posts/" + encodeURIComponent(f)); if (!r.ok) return null;
       const { meta, body } = parse(await r.text());
       const slug = f.replace(/\.md$/, "");
       return { slug, body, title: meta.title || slug.replace(/-/g, " "), date: (meta.date || "").slice(0, 10), desc: meta.description || "", tags: (meta.tags || "").replace(/[\[\]]/g, "").split(",").map(t => t.trim()).filter(Boolean), highlight: meta.highlight, medium: meta.medium, devto: meta.devto, canonical: meta.canonical };
