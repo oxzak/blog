@@ -1,5 +1,5 @@
 #The name of the release
-name: Release v1.1.2
+name: Release v1.1.3
 #Declaring the branches and tags
 on:
   push:
@@ -8,7 +8,7 @@ on:
 #Declaring all jobs and flows
 jobs:
   release:
-    name: Release v1.1.2
+    name: Release v1.1.3
     if: "github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, '[sonar]') && !contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     permissions:
@@ -25,11 +25,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v1.1.2
-          release_name: PBW v1.1.2
+          tag_name: v1.1.3
+          release_name: PBW v1.1.3
           body: |
             Changes in this Release:
-              - [New] First release version v1.1.2
+              - [New] First release version v1.1.3
               - [Enh] Post enhancements
           draft: false
           prerelease: false
