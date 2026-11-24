@@ -39,7 +39,7 @@ Setting up docker by installing docker desktop application makes it a straightfo
 	- After restarting your machine open the Microsoft Store and install your preferred Linux distribution (such as Ubuntu, Debian, or Kali Linux), and finish the configuration setup its simple and straightforward.
 	![[mss-ubuntu.png]]
 
-- Now, launch docker desktop application and follow the initial configuration instructions its also a simple and straightforward process.
+- Now, launch docker desktop application and follow the initial configuration instructions its also a simple and straightforward process (take your time going through the process and don't rush it).
 	![[docker-installer.png]]
 
 ## Lets check our installation
