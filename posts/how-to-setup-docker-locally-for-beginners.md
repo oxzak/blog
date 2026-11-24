@@ -37,7 +37,7 @@ Setting up docker by installing docker desktop application makes it a straightfo
 		- **Windows Subsystem for Linux**.
 		- **Virtual Machine Platform**.
 	- Click **OK** and restart your computer when prompted.
-	- Open the Microsoft Store and install your preferred Linux distribution (such as Ubuntu, Debian, or Kali Linux).
+	- After restarting your machine open the Microsoft Store and install your preferred Linux distribution (such as Ubuntu, Debian, or Kali Linux), and finish the configuration setup its simple and straightforward.
 	![[mss-ubuntu.png]]
 
 ### Lets check our installation
