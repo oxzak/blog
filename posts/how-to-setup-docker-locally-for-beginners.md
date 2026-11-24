@@ -18,7 +18,7 @@ Docker as the company describes it "Docker is an open platform for developing, t
 
 ![[docker-architecture.webp]]
 
-### Installation and Setup
+## Installation and Setup
 
 Setting up docker by installing docker desktop application makes it a straightforward process for Windows, Mac and Linux. Lets assume that we have windows device and we want to install docker in it, we gonna follow those steps:
 - Go to https://www.docker.com/products/docker-desktop/ and download docker desktop for windows (AMD64 or ARM64).
@@ -29,9 +29,8 @@ Setting up docker by installing docker desktop application makes it a straightfo
 	- **Restart your computer** to finish the installation.
 	- After restarting, a console window will open automatically, prompting you to **create a Linux username and password**.
 	- **Note:** Using the command automatically turns on the required optional features, downloads the latest WSL kernel, and installs Ubuntu as the default Linux distribution.
-	- Launch docker desktop application and follow the initial configuration instructions.
-	![[docker-installer.png]]
-- Or more simple way to go for windows gui style method:
+
+- Or more simple way enabling **WSL** is to go for windows gui style method:
 	- Press the **Windows Key**, type `Turn Windows features on or off`, and press **Enter**.
 	- In the list, check the boxes for:
 		- **Windows Subsystem for Linux**.
@@ -40,7 +39,10 @@ Setting up docker by installing docker desktop application makes it a straightfo
 	- After restarting your machine open the Microsoft Store and install your preferred Linux distribution (such as Ubuntu, Debian, or Kali Linux), and finish the configuration setup its simple and straightforward.
 	![[mss-ubuntu.png]]
 
-### Lets check our installation
+- Now, launch docker desktop application and follow the initial configuration instructions its also a simple and straightforward process.
+	![[docker-installer.png]]
+
+## Lets check our installation
 
 After finishing your installation setup, open your command-line then run this command **docker version** and make sure it returns an output resembling the following screen (having deferent version or release depends on the time you reading this article):
 
