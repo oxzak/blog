@@ -30,23 +30,24 @@ Setting up docker by installing docker desktop application makes it a straightfo
 	- After restarting, a console window will open automatically, prompting you to **create a Linux username and password**.
 	- **Note:** Using the command automatically turns on the required optional features, downloads the latest WSL kernel, and installs Ubuntu as the default Linux distribution.
 	- Launch docker desktop application and follow the initial configuration instructions.
-	![[docker-installer.png|629]]
-- Or go for the GUI style method:
+	![[docker-installer.png]]
+- Or more simple way to go for windows gui style method:
 	- Press the **Windows Key**, type `Turn Windows features on or off`, and press **Enter**.
 	- In the list, check the boxes for:
 		- **Windows Subsystem for Linux**.
 		- **Virtual Machine Platform**.
 	- Click **OK** and restart your computer when prompted.
 	- Open the Microsoft Store and install your preferred Linux distribution (such as Ubuntu, Debian, or Kali Linux).
+	![[mss-ubuntu.png]]
 
 ### Lets check our installation
 
-Open your command-line then run this command`docker version` and make sure it returns an output resembling the following:
+After finishing your installation setup, open your command-line then run this command **docker version** and make sure it returns an output resembling the following screen (having deferent version or release depends on the time you reading this article):
 
 ![[docker-version.png]]
 
-Click and open your docker desktop application, after finishing the setup you should get the following screen:
+Now, click and open your docker desktop application, after making sure the setup went well you should get the following similar screen opening the application (also again, having deferent version or release may show deferent screen style depending on the time you reading this article):
 
 ![[docker-desktop-initial-ui.png]]
 
-Docker is now installed on your machine. It’s time to learn how to use it in practice and thanks for your time to read my article, stay tune for the upcoming articles.
+Docker is now installed and works on your machine successfully. It’s now the time to learn more on how to use it and learning best docker practices. Finally, thanks for your time to read my article, stay tune for the upcoming articles.
