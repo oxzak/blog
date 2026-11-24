@@ -40,7 +40,7 @@ Setting up docker by installing docker desktop application makes it a straightfo
 	![[mss-ubuntu.png]]
 
 - Now, launch docker desktop application and follow the initial configuration instructions its also a simple and straightforward process (take your time going through the process and don't rush it).
-	![[docker-installer.png]]
+![[docker-installer.png]]
 
 ## Lets check our installation
 
