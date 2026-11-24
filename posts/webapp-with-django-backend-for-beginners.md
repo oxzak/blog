@@ -1,5 +1,5 @@
 ---
-title: WebApp with Django backend for beginners
+title: WebApp with Django backend for Beginners
 date: 2020-08-10
 description: Django project, for Beginners
 tags: [python, django, web development, backend]
@@ -24,7 +24,7 @@ After installing Django we now gonna create our Django project ( make sure to po
 django-admin startproject mycvsite
 ```
 
-Now we have our project created successfully, know we gonna make some changes to our [setting.py](http://setting.py/) file in ( DATABASES ) section, first step we gonna add our MySQL configuration with the following script( make sure to put your own information ):
+Now we have our project created successfully, know we gonna make some changes to our **setting.py** file in ( DATABASES ) section, first step we gonna add our MySQL configuration with the following script( make sure to put your own information ):
 
 ``` python
 DATABASES = {  
@@ -67,7 +67,7 @@ Next we create app by typing the following script:
 python3 manage.py startapp base
 ```
 
-Add the app name to the [setting.py](http://setting.py/) file in the ( INSTALLED_APPS ) section by typing this script:
+Add the app name to the **setting.py** file in the ( INSTALLED_APPS ) section by typing this script:
 
 ``` python
 INSTALLED_APPS = [    'base',       
@@ -86,14 +86,14 @@ Now we need create two files inside each other first file is ( templates ) the s
 mkdir -p templates/base && cd templates
 ```
 
-We gonna now add some functions in the [views.py](http://views.py/) file that renders our templates, view it holds functions that takes requests and anything from ( http response ) to ( template ). Now we gonna add the following script:
+We gonna now add some functions in the **views.py** file that renders our templates, view it holds functions that takes requests and anything from ( http response ) to ( template ). Now we gonna add the following script:
 
 ``` python
 from django.shortcuts import render  def home(request):       
     return render(request, 'base/index.html')
 ```
 
-Now we create file with the name of [urls.py](http://urls.py/) for our URLs routing system and insert the following command and script:
+Now we create file with the name of **urls.py** for our URLs routing system and insert the following command and script:
 
 ``` python
 nano urls.py
@@ -106,7 +106,7 @@ import views  urlpatterns = [
 ]
 ```
 
-And adding now our base app URLs to the main [urls.py](http://urls.py/) which gonna handle requests comes and decides where it should goes in our homepage add the following script to the file:
+And adding now our base app URLs to the main **urls.py** which gonna handle requests comes and decides where it should goes in our homepage add the following script to the file:
 
 ``` python
 from django.contrib import admin  
@@ -150,4 +150,4 @@ Finally, now everything is good and in the right place so now we gonna check the
 python3 manage.py runserver
 ```
 
-Thanks for your time to read my article and you can find my github for this project @ this link [https://github.com/oxzak/webapp-django](https://github.com/oxzak/webapp-django)
+Thanks for your time to read my article and you can find my github for this project @ this link: [Source Code](https://github.com/oxzak/webapp-django)
